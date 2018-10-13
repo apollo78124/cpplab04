@@ -7,161 +7,147 @@
 
 using namespace std;
 
-
-Animal {
-public:
-    Animal ()
+    Animal::Animal ()
     { cout << "Animal default const\n";
         age = 0;
-        id = 0;
         alive = 0;
         x = 0; // x axis location
         y = 0; // y axis location
     }
-    Animal (int a, double b, double c)
+Animal::Animal (int a, double b, double c)
     { cout << "Animal parameter const\n";
         age = a;
         x = b;
         y = c;
 
-        id = 0;
         alive = 0;
 
     }
 
-    virtual void move(double a, double b) {
+void Animal::move(double a, double b) {
         cout << "animal move\n";
         x = a;
         y = b;
     }
 
-    Animal(Animal& a) {
+Animal::Animal(Animal& a) {
         cout << "Animal copy constructor.\n";
         *this = a;
     }
 
-    virtual ~Animal()
+Animal::~Animal()
     { cout<<"Virtual Destruct animal \n"; }
 
-    virtual void sleep() {
+void Animal::sleep() {
         cout << "animal sleep\n";
 
     }
 
-    virtual void eat() {
+void Animal::eat() {
         cout << "Animal eat\n";
 
     }
 
-    friend ostream& operator<< (std::ostream& stream, const Animal& a1) {
-        cout << "Overload insertion operator.\n";
-    }
-};
 
-Bird : public Animal
-{
-private:
+ostream &operator<<(std::ostream &stream, const Animal &a1) {
+    cout << "Overload insertion operator.\n";
+}
 
-    double z;
-public:
-    Bird () {
+
+
+    Bird::Bird () {
         cout << "Bird default const\n";
         age = 0;
-        id = 0;
+
         alive = 0;
         x = 0; // x axis location
         y = 0;
         z = 0;// y axis location
     }
 
-    Bird (int a, double b, double c, double d)
+Bird::Bird (int a, double b, double c, double d)
     { cout << "Bird parameter const\n";
         age = a;
         x = b;
         y = c;
         z = d;
-        id = 0;
         alive = 0;
 
     }
 
-    void move(double a, double b, double c) {
+    void Bird::move(double a, double b, double c) {
         cout << "Bird move\n";
         x = a;
         y = b;
         z = c;
     }
 
-    Bird(Bird& a) {
+Bird::Bird(Bird& a) {
         cout << "Bird copy constructor.\n";
         *this = a;
     }
 
-    ~Bird()
+Bird::~Bird()
     { cout<<"Virtual Destruct Bird \n"; }
 
-    void sleep() override {
+    void Bird::sleep() {
         cout << "Bird sleep\n";
     }
 
-    void eat() override {
+    void Bird::eat() {
         cout << "Bird eat\n";
     }
 
-    friend ostream& operator<< (std::ostream& stream, const Bird& a1) {
+    ostream& operator<< (std::ostream& stream, const Bird& a1) {
         cout << "Bird Overload insertion operator.\n";
     }
 
-};
 
-class Canine : public Animal {
 
-public:
-    Canine() {
+
+Canine::Canine() {
         cout << "Canine default const\n";
         age = 0;
-        id = 0;
         alive = 0;
         x = 0; // x axis location
         y = 0; // y axis location
     }
 
-    Canine(int a, double b, double c) {
+Canine::Canine(int a, double b, double c) {
         cout << "Canine parameter const\n";
         age = a;
         x = b;
         y = c;
-        id = 0;
         alive = 0;
 
     }
 
-    void move(double a, double b) {
+    void Canine::move(double a, double b) {
         cout << "Canine move\n";
         x = a;
         y = b;
     }
 
-    Canine(Canine& a) {
+Canine::Canine(Canine& a) {
         cout << "Canine copy constructor.\n";
         *this = a;
     }
 
-    virtual ~Canine() { cout << "Virtual Destruct Canine \n"; }
+    Canine::~Canine() { cout << "Virtual Destruct Canine \n"; }
 
-    void sleep() override {
+    void Canine::sleep() {
         cout << "Canine sleep\n";
     }
 
-    void eat() override {
+    void Canine::eat() {
         cout << "Canine eat\n";
     }
 
-    void hunt() {
+    void Canine::hunt() {
         cout << "Canine hunt\n";
     }
 
-    friend ostream &operator<<(std::ostream &stream, const Canine &a1) {
+    ostream &operator<<(std::ostream &stream, const Canine &a1) {
         cout << "Canine Overload insertion operator.\n";
     }
-};
+

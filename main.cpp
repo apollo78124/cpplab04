@@ -9,18 +9,20 @@ int main()
     Animal *b1 = new Bird();
     Animal *c1 = new Canine();
 
-    *a1.move(3.1, 4.1, 5.1);
-    *b1.move(3.1, 4.1, 5.1);
-    *c1.move(3.1, 4.1, 5.1);
+    cout << *(Bird*) b1 << endl;
 
-    *a1.eat();
-    *b1.eat();
-    *c1.eat();
+    **b1->move(3.1, 4.1, 5.1);
+    /**
+  *c1.move(3.1, 4.1, 5.1);
 
-    *a1.sleep();
-    *b1.sleep();
-    *c1.sleep();
+  *a1.eat();
+  *(Bird*) b1.eat();
+  *c1.eat();
 
-    *c1.hunt();
+  *a1.sleep();
+  *b1.sleep();
+  *c1.sleep();
 
+  c1.hunt();
+  */
 }

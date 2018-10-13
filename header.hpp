@@ -41,7 +41,7 @@ public:
 
     Bird (int a, double b, double c, double d);
 
-    void move(double a, double b, double c);
+    void move (double a, double b, double c);
     Bird(Bird& a);
     ~Bird();
     void sleep() override;
@@ -57,7 +57,7 @@ public:
     Canine();
     Canine(int a, double b, double c);
 
-    void move(double a, double b);
+    void move(double a, double b) override;
 
     Canine(Canine& a);
 
